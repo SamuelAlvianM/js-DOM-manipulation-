@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albert Einstein</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <main>
+        <section class="container">
+            <h1 class="first">Albert Einstein</h1>
+            <img src="assets/a1.webp" alt="Albert Einstein" class="einstein-image">
+            <p>Albert Einstein was a theoretical physicist who developed the theory of relativity.</p>
+            <a href="https://en.wikipedia.org/wiki/Albert_Einstein" target="_blank" class="learn-more">Learn more about Albert Einstein</a>
+            <button id="quoteButton">Show Quote</button>
+            <p id="quote" class="quote"></p>
+        </section>
+
+        <section class="formula">
+            <h2> Albert Einstein's Famous Formula </h2>
+            <p id="formula">Einstein's formula: <strong>E = mc²</strong></p>
+
+            <button id="changeContentBtn">Press here to see more!</button>
+
+            <a href="https://en.wikipedia.org/wiki/Albert_Einstein" target="_blank" class="learn-more">Learn more about Albert Einstein</a>
+
+        </section>
+
+        <section class="bmi-card">
+            <h2>BMI Calculator</h2>
+            <input type="number" id="weight" placeholder="Weight (kg)">
+            <input type="number" id="height" placeholder="Height (cm)">
+            <button id="calculateBmiBtn">Calculate BMI</button>
+            <p id="bmiResult"></p>
+
+        </section>
+    </main>
+    <script src="src/dom-event.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.einstein-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.learn-more {
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    font-weight: bold;
+    color: rgb(251, 255, 10);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: #4e00b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    background: rgb(15, 255, 223);
+    border-radius: 50%;
+    transform: translate( -50%, -50% ) scale(0.5);
+    z-index: 0;
+    opacity: 0.2;
+}
+
+button:active:after {
+    transform: translate(-50%, -50% ) scale(1.2);
+}
+
+button span {
+    position: relative;
+    z-index: 1 !important;
+}
+
+.quote {
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+.bmi-card {
+    max-width: 600px;
+    margin: auto;
+    background: #f82649;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.bmi-card input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#bmiResult {
+    background-color: #acfd15; 
+    border: 2px solid #88ff00; 
+    border-radius: 8px; 
+    padding: 10px;
+    text-align: center;
+    font-weight: bold; 
+    text-decoration: underline;
+    margin-top: 10px;
+    transition: background-color 0.3s ease; 
+}
+
+#bmiResult:hover {
+    background-color: #24e6ff;
+}
