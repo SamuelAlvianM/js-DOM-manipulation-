@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
             "The important thing is not to stop questioning. Curiosity has its own reason for existing."
         ];
 
+        quote.style.color = 'yellow';
+        quote.style.backgroundColor = 'green';
+        quote.style.borderRadius = '50px';
+
+
         const quoteElement = document.getElementById('quote');
 
         if(quoteVisible) {
@@ -34,8 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             quoteVisible = true;
         }
     });
-
-
+    
 
     // BMI
 document.getElementById('calculateBmiBtn').addEventListener('click', function() {
@@ -71,6 +75,58 @@ document.getElementById('calculateBmiBtn').addEventListener('click', function() 
     bmiResultElement.textContent = `Your BMI is ${bmi.toFixed(2)}. Category: ${category}`;
 
 });
+
+
+// chaining function
+        function fetchBalloon() {
+            return new Promise((resolve, reject) => {
+
+                const success = Math.random() > 0.2; 
+                setTimeout(() => {
+                    if (success) {
+                        resolve("A balloon has been fetched!");
+                    } else {
+                        reject("Still Loading... Press Again");
+                    }
+                }, 100); 
+            });
+        }
+
+        function animateBalloons() {
+            const balloons = document.querySelectorAll('.balloon');
+            balloons.forEach(balloon => {
+                let x, y;
+                do {
+                    x = Math.random() * (window.innerWidth - 100);
+                    y = Math.random() * (window.innerHeight - 50);
+                } while (x < 0 || y < 0); //ini loop
+        
+                balloon.style.transition = 'left 0.5s, top 0.5s';
+                balloon.style.left = x + 'px';
+                balloon.style.top = y + 'px';
+            });
+        }
+
+        async function getBalloon() {
+            const fetchedElement = document.getElementById('fetched');
+            const errorElement = document.getElementById('error');
+            fetchedElement.textContent = '';
+            errorElement.textContent = ''; 
+
+            try {
+                const message = await fetchBalloon();
+                fetchedElement.textContent = message; 
+                animateBalloons(); 
+            } catch (error) {
+                errorElement.textContent = `Error: ${error}`;
+            } finally {
+                console.log("Fetch attempt completed."); 
+            }
+        }
+
+        document.getElementById('fetchButton').addEventListener('click', getBalloon);
+
+
 
 });
 
