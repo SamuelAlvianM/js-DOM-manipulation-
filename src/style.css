@@ -47,30 +47,16 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
-    position: relative;
     overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+button.clicked {
+    background-color: #88ff00;
 }
 
 button:hover {
     background-color: #4e00b3;
-}
-
-button:focus {
-    outline: none;
-}
-
-button::after {
-    content: '';
-    position: absolute;
-    background: rgb(15, 255, 223);
-    border-radius: 50%;
-    transform: translate( -50%, -50% ) scale(0.5);
-    z-index: 0;
-    opacity: 0.2;
-}
-
-button:active:after {
-    transform: translate(-50%, -50% ) scale(1.2);
 }
 
 button span {
@@ -115,4 +101,56 @@ button span {
 
 #bmiResult:hover {
     background-color: #24e6ff;
+}
+
+
+
+#fetched {
+    margin: 20px;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+}
+#error {
+    color: red;
+    text-align: center;
+}
+#balloons {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 150px;
+    margin: 20px 0;
+}
+.balloon {
+    width: 100px;
+    height: 150px;
+    background-color: #ff6347; /* Tomato color */
+    border-radius: 150px 150px 280px 10px;
+    position: relative; 
+    margin: 0 10px;
+    animation: float 3s ease-in-out infinite;
+}
+.balloon:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#fetchButton {
+    max-width: 600px;
+    margin: auto;
+    padding: 2em;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
 }
